@@ -1,8 +1,7 @@
 {
-  "name": "express-calculator",
+  "name": "server2",
   "version": "1.0.0",
-  "main": "server1.js",
-  "type": "module",
+  "main": "server2.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -11,7 +10,6 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
-    "axios": "^1.7.9",
     "express": "^4.21.2"
   }
 }
