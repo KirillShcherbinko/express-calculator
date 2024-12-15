@@ -6,12 +6,11 @@ app.use(express.json());
 
 // Отправляем результат вычисления
 app.post("/calculate", (req, res) => {
+    const { expression } = req.body;
+    if (!expression) {
+        return res.status(400).json({message: ("Выражение обязательно")});
+    }
     try {
-        const { expression } = req.body;
-        if (!expression) {
-            throw new Error("Выражение обязательно");
-        }
-
         const result = evaluate(expression);
         res.json({ result });
     } catch (err) {
@@ -21,6 +20,6 @@ app.post("/calculate", (req, res) => {
 
 const PORT = 5001;
 app.listen(PORT, () => {
-    console.log("Север 2 слушает на порту 5001");
+    console.log(`Север 2 запущен на порту ${PORT}`);
 })
 
