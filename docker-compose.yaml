@@ -1,0 +1,12 @@
+services:
+  server1:
+    build:
+      context: ./server1
+    ports:
+      - "5000:5000"
+    links:
+      - server2
+
+  server2:
+    build:
+      context: ./server2
