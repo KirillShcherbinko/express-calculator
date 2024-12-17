@@ -14,7 +14,7 @@ app.get("/expression", async (req, res) => {
         return res.status(400).json({message: "Параметр выражения обязательный"});
     } 
     try {
-        const response = await axios.post("http://server2:5001/calculate", { expression });
+        const response = await axios.post("http://server2-service:5001/calculate", { expression });
         res.status(200).json({result: `Результат вычисления ${response.data.result}`});
     } catch (err) {
         res.status(500).json({message: "Ошибка при вычислении"});

@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: server2-deployment
+  labels:
+    app: server2
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: server2
+  template:
+    metadata:
+      labels:
+        app: server2
+    spec:
+      containers:
+        - name: server2
+          image: shcherbinko/server2-image:latest
+          ports:
+            - containerPort: 5001
